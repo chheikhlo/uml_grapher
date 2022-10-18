@@ -5,6 +5,7 @@ import fr.lernejo.umlgrapher.UmlGraph;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 public class UmlGraphTests {
 
     @Test
@@ -27,3 +28,4 @@ public class UmlGraphTests {
 
     }
 }
+

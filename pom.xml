@@ -57,32 +57,14 @@
                     <version>${jacoco-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.4.2</version>
-
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>${exec-maven-plugin.version}</version>
                     <configuration>
-                        <descriptorRefs>
-                            <descriptorRef>jar-with-dependencies</descriptorRef>
-                        </descriptorRefs>
-                        <appendAssemblyId>false</appendAssemblyId>
-                        <archive>
-                            <manifest>
-                                <mainClass>fr.lernejo.umlgrapher.Launcher</mainClass>
-                            </manifest>
-                        </archive>
+                        <mainClass>fr.lernejo.umlgrapher.Launcher</mainClass>
                     </configuration>
-
-                    <executions>
-                        <execution>
-                            <id>make-assembly</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>single</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
+
             </plugins>
         </pluginManagement>
         <plugins>
