@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UmlGraph.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">uml_grapher</a> &gt; <a href="index.source.html" class="el_package">fr.lernejo.umlgrapher</a> &gt; <span class="el_source">UmlGraph.java</span></div><h1>UmlGraph.java</h1><pre class="source lang-java linenums">package fr.lernejo.umlgrapher;
+
+
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.*;
+
+
+public class UmlGraph {
+<span class="fc" id="L11">    private final List&lt;String&gt; myGraph = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L12">    private final GraphType mermai = GraphType.Mermaid;</span>
+    private Class&lt;?&gt;[] myClass;
+
+<span class="fc" id="L15">    public UmlGraph(Class&lt;?&gt;... myClass) {</span>
+<span class="fc" id="L16">        this.myClass= myClass;</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        for (int i = 0; i &lt; myClass.length; i++) {</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">            if (myClass[i].isInterface()) {</span>
+<span class="fc" id="L19">                isClassForInterface(myClass[i]);</span>
+            } else{
+<span class="fc" id="L21">                isClassForClass(myClass[i]);</span>
+            }
+        }
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if(myClass.length&gt;1){</span>
+<span class="fc" id="L25">            this.myGraph.add(this.withRelation());</span>
+        }
+<span class="fc" id="L27">    }</span>
+
+    public void isClassForInterface(Class&lt;?&gt; myClass){
+<span class="fc" id="L30">        this.myGraph.add(&quot;class &quot; + myClass.getSimpleName() + &quot; {\n    &lt;&lt;interface&gt;&gt;\n}\n&quot;);</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if(myClass.getSuperclass() != null)</span>
+<span class="nc" id="L32">            isClassForInterface(myClass.getSuperclass());</span>
+<span class="fc" id="L33">    }</span>
+
+    public void isClassForClass(Class&lt;?&gt; myClass){
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if(!(myClass.isInterface())){</span>
+<span class="fc" id="L37">            this.myGraph.add(&quot;class &quot; + myClass.getSimpleName() + &quot;\n&quot;);</span>
+        }else
+<span class="fc" id="L39">            this.myGraph.add(&quot;class &quot; + myClass.getSimpleName() + &quot; {\n    &lt;&lt;interface&gt;&gt;\n}\n&quot;);</span>
+
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if(myClass.getInterfaces().length != 0)</span>
+<span class="fc" id="L42">            isClassForClass(myClass.getInterfaces()[0]);</span>
+<span class="fc" id="L43">    }</span>
+
+
+
+    public String withRelation(){
+<span class="fc" id="L48">        UmlType graphType = new UmlType(this.myClass);</span>
+<span class="fc" id="L49">        return graphType.asForRelation(mermai);</span>
+    }
+
+    /*
+    public void forSingleton(Class&lt;?&gt;... myClass){
+        for (int i = 0; i &lt; myClass.length; i++) {
+                this.myGraph.add(&quot;class &quot; + myClass[i].getSimpleName() + &quot; {\n&quot;);
+                for (int j = 0; j &lt; myClass[i].getDeclaredFields().length; j++) {
+                    if(Modifier.isPrivate(myClass[i].getDeclaredFields()[j].getModifiers())){
+                        this.myGraph.add(&quot;    -&quot; + myClass[i].getDeclaredFields()[j].getType().getSimpleName() + &quot; &quot; + myClass[i].getDeclaredFields()[j].getName() + &quot;$\n&quot;);
+                    }else
+                        this.myGraph.add(&quot;    +&quot; + myClass[i].getDeclaredFields()[j].getType().getSimpleName() + &quot; &quot; + myClass[i].getDeclaredFields()[j].getName() + &quot;$\n&quot;);
+                }
+                inForSingleton(i,myClass);
+                this.myGraph.add(&quot;}\n&quot;);
+                this.myGraph.add(myClass[i].getSimpleName() + &quot; &lt;-- &quot; + myClass[i].getSimpleName() + &quot; : returns\n&quot;);
+        }
+    }
+
+    public void inForSingleton(int i,Class&lt;?&gt;... myClass){
+        for (int j = 0; j &lt; myClass[i].getDeclaredMethods().length; j++) {
+            if (myClass[i].getDeclaredMethods()[j].getParameters().length &gt;= 1) {
+                for (int k = 0; k &lt; myClass[i].getDeclaredMethods()[j].getParameters().length; k++) {
+                    if (Modifier.isPrivate(myClass[i].getDeclaredMethods()[j].getModifiers())) {
+                        this.myGraph.add(&quot;    -&quot; + myClass[i].getDeclaredMethods()[j].getName() + &quot;(&quot; + myClass[i].getDeclaredMethods()[j].getParameters()[k].getType() + &quot; &quot; + myClass[i].getDeclaredMethods()[j].getParameters()[k].getName() + &quot;) &quot; + myClass[i].getDeclaredMethods()[j].getReturnType().getSimpleName() + &quot;\n&quot;);
+                    } else
+                        this.myGraph.add(&quot;    +&quot; + myClass[i].getDeclaredMethods()[j].getName() + &quot;(&quot; + myClass[i].getDeclaredMethods()[j].getParameters()[k].getType() + &quot; &quot; + myClass[i].getDeclaredMethods()[j].getParameters()[k].getName() + &quot;) &quot; + myClass[i].getDeclaredMethods()[j].getReturnType().getSimpleName() + &quot;\n&quot;);
+                }
+            } else {
+                if (Modifier.isPrivate(myClass[i].getDeclaredMethods()[j].getModifiers())) {
+                    this.myGraph.add(&quot;    -&quot; + myClass[i].getDeclaredMethods()[j].getName() + &quot;()$ &quot; + myClass[i].getDeclaredMethods()[j].getReturnType().getSimpleName() + &quot;\n&quot;);
+                } else
+                    this.myGraph.add(&quot;    +&quot; + myClass[i].getDeclaredMethods()[j].getName() + &quot;()$ &quot; + myClass[i].getDeclaredMethods()[j].getReturnType().getSimpleName() + &quot;\n&quot;);
+            }
+        }
+    }
+    */
+    public String as(GraphType mermai){
+<span class="fc" id="L87">        String monGraph = &quot;classDiagram\n&quot;;</span>
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        for (int i = 0; i&lt;myGraph.size() ; i++) {</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">            for (int j = 0; j &lt; myGraph.size() ; j++){</span>
+<span class="fc bfc" id="L90" title="All 4 branches covered.">                if( (i!=j) &amp;&amp; myGraph.get(i).equals(myGraph.get(j))){</span>
+<span class="fc" id="L91">                    myGraph.remove(myGraph.get(i));</span>
+                }
+            }
+        }
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">        if (mermai == GraphType.Mermaid) {</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">            for (int i = 0; i &lt; myGraph.size(); i++)</span>
+<span class="fc" id="L97">                monGraph += myGraph.get(i);</span>
+        }
+<span class="fc" id="L99">        return monGraph;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

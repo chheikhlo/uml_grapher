@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UmlType.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">uml_grapher</a> &gt; <a href="index.source.html" class="el_package">fr.lernejo.umlgrapher</a> &gt; <span class="el_source">UmlType.java</span></div><h1>UmlType.java</h1><pre class="source lang-java linenums">package fr.lernejo.umlgrapher;
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class UmlType {
+
+<span class="fc" id="L10">    private final List&lt;String&gt; myGraph = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L11">    public UmlType(Class&lt;?&gt;... myClass) {</span>
+<span class="fc" id="L12">         parcourirTypeParent(0,myClass);</span>
+<span class="fc" id="L13">    }</span>
+
+    public void parcourirTypeParent(int i,Class&lt;?&gt;... myClass){
+        Class&lt;?&gt; mySuperClass;
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        while (i&lt;myClass.length) {</span>
+<span class="fc bfc" id="L18" title="All 4 branches covered.">            if (myClass[i].isInterface() &amp;&amp; myClass[i].getInterfaces().length != 0) {</span>
+<span class="fc" id="L19">                isHeritBeetwenInterface(myClass[i]);</span>
+<span class="pc bpc" id="L20" title="2 of 6 branches missed.">            } else if (!(myClass[i].isInterface()) &amp;&amp; myClass[i].getSuperclass() != null &amp;&amp; !(myClass[i].getSuperclass().getSimpleName().equals(&quot;Object&quot;))) {</span>
+<span class="nc" id="L21">                mySuperClass = myClass[i].getSuperclass();</span>
+<span class="nc" id="L22">                isHeritBeetwenClasse(myClass[i],mySuperClass);</span>
+<span class="pc bpc" id="L23" title="1 of 4 branches missed.">            } else if (!(myClass[i].isInterface()) &amp;&amp; myClass[i].getInterfaces().length != 0) {</span>
+<span class="fc" id="L24">                isImplement(myClass[i]);</span>
+            }
+<span class="fc" id="L26">            i++;</span>
+        }
+<span class="fc" id="L28">    }</span>
+    public void isHeritBeetwenInterface(Class&lt;?&gt; myClass){
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        for (int j = 0; j &lt; myClass.getInterfaces().length; j++) {</span>
+<span class="fc" id="L31">            this.myGraph.add(myClass.getInterfaces()[j].getSimpleName() + &quot; &lt;|-- &quot; + myClass.getSimpleName() + &quot; : extends\n&quot;);</span>
+<span class="fc" id="L32">            isHeritBeetwenInterface(myClass.getInterfaces()[j]);</span>
+        }
+<span class="fc" id="L34">    }</span>
+    public void isHeritBeetwenClasse(Class&lt;?&gt; myClass,Class&lt;?&gt; mySuperClass){
+<span class="nc" id="L36">       int k = 0;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        while(mySuperClass != null) {</span>
+<span class="nc" id="L38">            this.myGraph.add(mySuperClass.getSimpleName() + &quot; &lt;|-- &quot; + myClass.getSimpleName() + &quot; : extends\n&quot;);</span>
+<span class="nc" id="L39">            mySuperClass = mySuperClass.getSuperclass();</span>
+<span class="nc" id="L40">            isHeritBeetwenClasse(mySuperClass, mySuperClass);</span>
+<span class="nc" id="L41">            k++;</span>
+        }
+<span class="nc" id="L43">    }</span>
+    public void isImplement(Class myClass){
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        for (int j = 0; j &lt; myClass.getInterfaces().length ; j++) {</span>
+<span class="fc" id="L46">            this.myGraph.add(myClass.getInterfaces()[j].getSimpleName() + &quot; &lt;|.. &quot; + myClass.getSimpleName() + &quot; : implements\n&quot;);</span>
+        }
+<span class="fc" id="L48">    }</span>
+    public String asForRelation(GraphType mermai){
+<span class="fc" id="L50">        String monGraph = &quot;&quot;;</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        for (int i = 0; i&lt;myGraph.size() ; i++) {</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            for (int j = 0; j &lt; myGraph.size() ; j++){</span>
+<span class="fc bfc" id="L53" title="All 4 branches covered.">                if( (i!=j) &amp;&amp; myGraph.get(i).equals(myGraph.get(j))){</span>
+<span class="fc" id="L54">                    myGraph.remove(myGraph.get(i));</span>
+                }
+            }
+        }
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (mermai == GraphType.Mermaid) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            for (int i = 0; i &lt; myGraph.size(); i++)</span>
+<span class="fc" id="L60">                monGraph += myGraph.get(i);</span>
+        }
+<span class="fc" id="L62">        return monGraph;</span>
+    }
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

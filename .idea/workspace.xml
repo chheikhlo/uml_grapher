@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88a7cd24-a1c3-42c8-a633-cadc4a09e1be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/lernejo/umlgrapher/UmlGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/lernejo/umlgrapher/UmlGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/lernejo/umlgrapher/UmlGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/lernejo/umlgrapher/UmlGraph.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Gh1tUZxLh4w527y5V4ol7bxY5p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dabli/Downloads/projet/uml_grapher/target/test-classes&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.UmlGraphTests.empty_Classes_with_relation">
+    <configuration name="SampleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml_grapher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.lernejo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.lernejo" />
+      <option name="MAIN_CLASS_NAME" value="fr.lernejo.SampleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UmlGraphTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml_grapher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.lernejo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.lernejo" />
+      <option name="MAIN_CLASS_NAME" value="fr.lernejo.UmlGraphTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UmlGraphTests (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml_grapher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.lernejo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.lernejo" />
+      <option name="MAIN_CLASS_NAME" value="fr.lernejo.UmlGraphTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UmlGraphTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml_grapher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.lernejo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.lernejo" />
+      <option name="MAIN_CLASS_NAME" value="fr.lernejo.UmlGraphTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UmlGraphTests.empty_Classes_with_relation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml_grapher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fr.lernejo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fr.lernejo" />
+      <option name="MAIN_CLASS_NAME" value="fr.lernejo.UmlGraphTests" />
+      <option name="METHOD_NAME" value="empty_Classes_with_relation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.SampleTest" />
+      <item itemvalue="JUnit.UmlGraphTests (1)" />
+      <item itemvalue="JUnit.UmlGraphTests (2)" />
+      <item itemvalue="JUnit.UmlGraphTests" />
+      <item itemvalue="JUnit.UmlGraphTests.empty_Classes_with_relation" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UmlGraphTests.empty_Classes_with_relation" />
+        <item itemvalue="JUnit.UmlGraphTests (1)" />
+        <item itemvalue="JUnit.UmlGraphTests (2)" />
+        <item itemvalue="JUnit.UmlGraphTests" />
+        <item itemvalue="JUnit.SampleTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88a7cd24-a1c3-42c8-a633-cadc4a09e1be" name="Changes" comment="" />
+      <created>1666826223356</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666826223356</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/uml_grapher$UmlGraphTests_empty_interface_with_no_relation.ic" NAME="UmlGraphTests.empty_interface_with_no_relation Coverage Results" MODIFIED="1666914163458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$UmlGraphTests.ic" NAME="UmlGraphTests Coverage Results" MODIFIED="1666969633223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$UmlGraphTests__2_.ic" NAME="UmlGraphTests (2) Coverage Results" MODIFIED="1666970264618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$LauncherTest.ic" NAME="LauncherTest Coverage Results" MODIFIED="1666966191971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.umlgrapher.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$UmlGraphTests_singleton_graph.ic" NAME="UmlGraphTests.singleton_graph Coverage Results" MODIFIED="1666873206509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$SampleTest.ic" NAME="SampleTest Coverage Results" MODIFIED="1666969036114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$UmlGraphTests__1_.ic" NAME="UmlGraphTests (1) Coverage Results" MODIFIED="1666973781960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$UmlGraphTests_empty_Classes_with_relation.ic" NAME="UmlGraphTests.empty_Classes_with_relation Coverage Results" MODIFIED="1666976674983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$LauncherTest_call.ic" NAME="LauncherTest.call Coverage Results" MODIFIED="1666966105414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.umlgrapher.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/uml_grapher$LauncherTest_empty_interface_with_no_relation.ic" NAME="LauncherTest.empty_interface_with_no_relation Coverage Results" MODIFIED="1666967124615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>fr.lernejo.umlgrapher.*</FILTER>
+    </SUITE>
+  </component>
+</project>

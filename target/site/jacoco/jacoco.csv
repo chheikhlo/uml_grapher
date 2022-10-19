@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+uml_grapher,fr.lernejo.umlgrapher,Launcher,40,0,0,0,9,0,3,0,3,0
+uml_grapher,fr.lernejo.umlgrapher,UmlType,35,184,6,28,9,28,6,17,1,5
+uml_grapher,fr.lernejo.umlgrapher,UmlGraph,4,163,2,22,1,31,2,15,0,5
+uml_grapher,fr.lernejo.umlgrapher,GraphType,0,9,0,0,0,2,0,1,0,1
+uml_grapher,fr.lernejo,Sample,5,27,1,3,0,4,1,4,0,3
+uml_grapher,fr.lernejo,Sample.Operation,0,39,0,0,0,6,0,4,0,4

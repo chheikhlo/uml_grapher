@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UmlRelation.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">uml_grapher</a> &gt; <a href="index.source.html" class="el_package">fr.lernejo.umlgrapher</a> &gt; <span class="el_source">UmlRelation.java</span></div><h1>UmlRelation.java</h1><pre class="source lang-java linenums">package fr.lernejo.umlgrapher;
+
+import java.util.Set;
+
+public class UmlRelation {
+    private final Set&lt;UmlType&gt; Tree;
+
+<span class="fc" id="L8">    public UmlRelation(Set&lt;UmlType&gt; arbre) {</span>
+<span class="fc" id="L9">        this.Tree = arbre;</span>
+<span class="fc" id="L10">    }</span>
+
+    public Set&lt;Relation&gt; Relation(Set&lt;Relation&gt; myRelation) {
+<span class="fc" id="L13">        String link = &quot;&quot;;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        for (UmlType i : Tree) {</span>
+<span class="fc" id="L15">            Class[] j = i.getaClasse().getInterfaces();</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">            for (Class k : j) {</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">                if (i.getaClasse().getSuperclass() == null) {</span>
+<span class="fc" id="L18">                    link = k.getSimpleName() + &quot; &lt;|-- &quot; + i.getaClasse().getSimpleName() + &quot; : extends&quot;;</span>
+                } else {
+<span class="fc" id="L20">                    link = k.getSimpleName() + &quot; &lt;|.. &quot; + i.getaClasse().getSimpleName() + &quot; : implements&quot;;</span>
+                }
+<span class="fc" id="L22">                link += &quot;\n&quot;;</span>
+<span class="fc" id="L23">                myRelation.add(new Relation(k, i.getaClasse(), link));</span>
+            }
+<span class="fc" id="L25">        }</span>
+<span class="fc" id="L26">        return myRelation;</span>
+    }
+
+    public String allRelation(Set&lt;Relation&gt; links, Set&lt;UmlType&gt; types) {
+<span class="fc" id="L30">        String link = &quot;&quot;;</span>
+<span class="fc" id="L31">        links = new UmlRelation(types).Relation(links);</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        for (Relation i : links) {</span>
+<span class="fc" id="L33">            link += i.getLink();</span>
+<span class="fc" id="L34">        }</span>
+<span class="fc" id="L35">        return link;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
